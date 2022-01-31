@@ -2,14 +2,14 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Седона</title>
 </head>
 <body>
 <!--Шапка сайта-->
 <header class="main-header">
     <nav class="navigation-header">
-        <a class="main-logo-link" href="https://htmlacademy.ru/"><img class="main-logo" src="" alt="Логотип сайта Седона."></a>
+        <a class="main-logo-link" href="https://htmlacademy.ru/"><img class="main-logo" src="images/main-logo.svg" width="138" height="70" alt="Логотип сайта Седона."></a>
         <ul class="navigation-list">
             <li class="navigation-item">
                 <a class="navigation-link" href="index.html">Главная</a>
@@ -23,13 +23,13 @@
         </ul>
         <ul class="navigation-list navigation-control">
             <li class="navigation-item">
-                <span class="visually-hidden">Поиск.</span><img src="" alt="Иконка поиска.">
+                <a class="navigation-link" href="#"><span class="visually-hidden">Поиск.</span><img src="images/nav-search.svg" width="20" height="20" alt="Иконка поиска."></a>
             </li>
             <li class="navigation-item">
-              <span class="visually-hidden">Избранное.</span><img src="" alt="Иконка Избранное.">
+                <a class="navigation-link" href="#"><span class="visually-hidden">Избранное.</span><img src="images/nav-heart.svg" width="20" height="20" alt="Иконка Избранное."></a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-link navigation-button" href="catalog.html">Хочу сюда!</a>
+              <a class="navigation-link navigation-button" href="#">Хочу сюда!</a>
             </li>
         </ul>
     </nav>
@@ -43,7 +43,7 @@
       <h1 class="header-catalog-title">Гостиницы Седоны</h1>
       <ul class="breadcrumbs-list">
           <li class="breadcrumbs-item">
-              <a class="breadcrumbs-link" href="index.html"><img src="" alt="Иконка на главную"><span class="visual-hidden">Главная</span></a>
+              <a class="breadcrumbs-link" href="index.html"><img src="images/icon-home.svg" width="20" height="20" alt="Иконка на главную">Главная</a>
           </li>
           <li class="breadcrumbs-item">
               <a class="breadcrumbs-link">Гостиницы</a>
@@ -130,14 +130,15 @@
                   <option value="sorting-price">Сначала дорогие</option>
               </select>
               <ul class="view-list">
+                  <!--точно не знаю пока как реализуется , возможно дальше покажут , пока оставил так для наглядности-->
                   <li class="view-item">
-                      <input class="view-images" type="image" alt="отели в столбик">
+                      <input class="view-images" type="image" alt="отели в столбик" src="images/sorting-list.svg" width="20" height="20">
                   </li>
                   <li class="view-item">
-                      <input class="view-images" type="image" alt="один отель">
+                      <input class="view-images" type="image" alt="один отель" src="images/sorting-slideshow.svg" width="20" height="20">
                   </li>
                   <li class="view-item">
-                      <input class="view-images" type="image" alt="отели в строку">
+                      <input class="view-images" type="image" alt="отели в строку" src="images/sorting-tile.svg" width="20" height="20">
                   </li>
               </ul>
       </fieldset>
@@ -148,9 +149,9 @@
       <h2 class="visually-hidden">Список доступных отелей</h2>
       <ul class="hotel-list">
           <li class="hotel-item">
-              <img class="hotel-images" src="" alt="Отель Amara Resort & Spa">
+              <img class="hotel-images" src="images//hotel/amara-hotel.jpg" width="299" height="206" alt="Отель Amara Resort & Spa">
               <div class="hotel-info">
-                  <h3 class="hotel-title">Amara Resort &#38 Spa</h3>
+                  <h3 class="hotel-title">Amara Resort and Spa</h3>
                   <span class="hotel-type">Гостиница</span>
                   <span class="hotel-price">От 4000 ₽</span>
                   <P>
@@ -164,7 +165,7 @@
               </div>
           </li>
           <li class="hotel-item">
-              <img class="hotel-images" src="" alt="Отель Desert Quail Inn">
+              <img class="hotel-images" src="images/hotel/desert-hotel.jpg" width="299" height="206" alt="Отель Desert Quail Inn">
               <div class="hotel-info">
                   <h3 class="hotel-title">Desert Quail Inn</h3>
                   <span class="hotel-type">Гостиница</span>
@@ -180,7 +181,7 @@
               </div>
           </li>
           <li class="hotel-item">
-              <img class="hotel-images" src="" alt="Отель Villas at Poco Diablo">
+              <img class="hotel-images" src="images/hotel/villas-hotel.jpg" width="299" height="206" alt="Отель Villas at Poco Diablo">
               <div class="hotel-info">
                   <h3 class="hotel-title">Villas at Poco Diablo</h3>
                   <span class="hotel-type">Гостиница</span>
@@ -196,7 +197,7 @@
               </div>
           </li>
           <li class="hotel-item">
-              <img class="hotel-images" src="" alt="Отель GreenTree Inn">
+              <img class="hotel-images" src="images/hotel/greentree-hotel.jpg" width="299" height="206" alt="Отель GreenTree Inn">
               <div class="hotel-info">
                   <h3 class="hotel-title">GreenTree Inn</h3>
                   <span class="hotel-type">Гостиница</span>
@@ -212,14 +213,12 @@
               </div>
           </li>
       </ul>
+      <div class="more-result">
+          <button class="button-result button-blue" type="button">Загрузить еще</button>
+      </div>
   </section>
   <!--Все отели-->
-  <!--Кнопка больше результатов-->
-  <section class="more-result">
-      <h2 class="visually-hidden">Больше результатов</h2>
-      <button class="button-result button-blue" type="button">Загрузить еще</button>
-  </section>
-  <!--Кнопка больше результатов-->
+
   <!--Пагинация-->
   <section class="pagination">
       <h2 class="visually-hidden">Пагинация отелей</h2>
@@ -236,7 +235,8 @@
       <div class="hotel-on-page">
           <span class="hotel-on-page-title">Гостиниц на странице:</span>
           <select name="sort">
-              <option value="lowprice">Сначала дешевые</option>
+              <option value="low-price">Сначала дешевые</option>
+              <option value="max-price">Сначала дорогие</option>
           </select>
       </div>
   </section>
@@ -245,16 +245,16 @@
 <!--основное содержимое-->
 <!--Подвал сайта-->
 <footer class="main-footer">
-  <section class="footer-contacts">
-      <h2 class="visually-hidden">Контакты сайта Седона.</h2>
-      <ul class="social-list">
-          <li class="social-item"><a href="https://twitter.com/htmlacademy_ru"><img src="" alt="Социальная сеть Twitter."></a></li>
-          <li class="social-item"><a href="https://www.facebook.com/htmlacademy"><img src="" alt="Социальная сеть Facebook."></a></li>
-          <li class="social-item"><a href="https://www.youtube.com/c/HTMLAcademyRUS"><img src="" alt="Социальная сеть Youtube."></a></li>
-      </ul>
-      <a class="footer-phone-number" href="tel:+78128121212" >+7 (812) 812-12-12</a>
-      <a class="footer-logo" href="mailto:htmlacademy.ru" ><img src="" alt="Ссылка на HTML Academy."></a>
-  </section>
+    <section class="footer-contacts">
+        <h2 class="visually-hidden">Контакты сайта Седона.</h2>
+        <ul class="social-list">
+            <li class="social-item"><a href="https://twitter.com/htmlacademy_ru"><img src="images/social-twitter.svg" width="20" height="20" alt="Социальная сеть Twitter."></a></li>
+            <li class="social-item"><a href="https://www.facebook.com/htmlacademy"><img src="images/social-facebook.svg" width="20" height="20" alt="Социальная сеть Facebook."></a></li>
+            <li class="social-item"><a href="https://www.youtube.com/c/HTMLAcademyRUS"><img src="images/social-youtube.svg" width="20" height="20" alt="Социальная сеть Youtube."></a></li>
+        </ul>
+        <a class="footer-phone-number" href="tel:+78128121212" >+7 (812) 812-12-12</a>
+        <a class="footer-logo" href="mailto:htmlacademy.ru" ><img class="footer-logo-images" src="images/footer-logo.svg" width="115" height="33" alt="Ссылка на HTML Academy."></a>
+    </section>
 </footer>
 <!--Подвал сайта-->
 </body>

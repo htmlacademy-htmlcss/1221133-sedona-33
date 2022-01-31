@@ -1,0 +1,48 @@
+/*Общие стили*/
+*{
+    box-sizing: border-box;
+}
+
+.visually-hidden{
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+
+/*Общие стили*/
+
+
+/*Главная страница*/
+.main-background{
+    width: 1200px;
+    height: 485px;
+    background: url("../images/background-divider.svg") no-repeat bottom,
+                url("../images/welcome.svg") no-repeat 50% 50%,
+                url("../images/background-index.jpg") no-repeat;
+
+}
+/*Главная страница*/
+
+
+/*Главная каталога*/
+.subscribe{
+    width: 1200px;
+    height: 411px;
+    background: url("../images/background-subscribe.jpg") no-repeat;
+}
+
+.header-catalog{
+    width: 1200px;
+    height: 408px;
+    background: url("../images/background-catalog-filter.jpg") no-repeat;
+
+}
+
+.catalog-filter{
+    display: flex;
+    justify-content: space-between;
+
+}
+/*Главная каталога*/
