@@ -1,6 +1,26 @@
+/*шрифт*/
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-display: swap;
+}
+/*шрифт*/
+
 /*Общие стили*/
-*{
-    box-sizing: border-box;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 .visually-hidden{
@@ -11,38 +31,431 @@
     margin: -1px;
 }
 
-/*Общие стили*/
+body{
+  font-family: "PT Sans", "Arial", sans-serif;
+  font-size: 18x;
+  line-height: 21px;
+  color: #000000;
+  background-color: #FFFFFF;
+}
 
+.container{
+  width: 1200px;
+  margin: 0 auto;
+  background: #FFFFFF;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+/*Общие стили*/
 
 /*Главная страница*/
 .main-background{
-    width: 1200px;
-    height: 485px;
-    background: url("../images/background-divider.svg") no-repeat bottom,
-                url("../images/welcome.svg") no-repeat 50% 50%,
-                url("../images/background-index.jpg") no-repeat;
+  width: 1200px;
+  min-height: 485px;
+  background: url("../images/background-divider.svg")no-repeat bottom,
+              url("../images/welcome.svg") no-repeat 50% 50%,
+              url("../images/background-index.jpg") no-repeat;
 
 }
+/*Шапка сайта*/
+.navigation-link{
+  font-size: 20px;
+  line-height: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000000;
+  text-align: center;
+}
+
+.navigation-button{
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #756257;
+  text-transform: uppercase;
+  padding: 5px;
+  text-align: center;
+}
+
+.navigation-list{
+  list-style: none;
+}
+/*Шапка сайта*/
+.welcome{
+  text-align: center;
+}
+
+.welcome-title{
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.welcome-text{
+  font-size: 22px;
+  line-height: 36px;
+  color: #333333;
+}
+
+/*Преимущества*/
+.features-list,
+.features-sub-list{
+  list-style: none;
+}
+
+.features-item-title{
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.features-item-promo{
+  background: #83B3D3;
+  font-size: 18px;
+  line-height: 21px;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.feauters-item-short{
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+}
+
+.features-item:nth-child(3),
+.features-item:nth-child(5){
+  background: rgba(131, 179, 211, 0.12);
+}
+
+.features-item:nth-child(4){
+  background: rgba(131, 179, 211, 0.2);
+}
+
+.features-sub-item:nth-child(odd){
+  background: rgba(131, 179, 211, 0.12);
+}
+
+.features-subtitle{
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.features-subtext{
+  font-size: 18px;
+  line-height: 21px;
+  color: #333333;
+}
+/*Преимущества*/
+
+/*Секция поиска*/
+.search{
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.search-title{
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.search-text{
+  font-size: 22px;
+  line-height: 26px;
+  color: #333333;
+}
+
+.button-search{
+  font-size: 16px;
+  line-height: 36px;
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #756257;
+  text-transform: uppercase;
+  padding: 5px;
+  border: none;
+}
+/*Секция поиска*/
+
+
+/*Секция подписки*/
+.subscribe{
+  text-align: center;
+  width: 1200px;
+  height: 411px;
+  background: url("../images/background-subscribe.jpg") no-repeat;
+  margin: 50px 0;
+}
+
+.subscribe-title{
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.subscribe-text{
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.button-subscribe{
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: uppercase;
+  background: #83B3D3;
+  border: none;
+}
+
+.subscribe-catalog{
+  text-align: center;
+  margin: 50px 0;
+}
+
+.subscribe-title-catalog{
+  color: #000000;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+.subscribe-text-catalog{
+  color: #000000;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.subscribe-input{
+  font-size: 18px;
+  line-height: 26px;
+  color: #000000;
+  border: none;
+  background: #F2F2F2;
+  border-radius: 10px 0px 0px 10px;
+  padding: 10px;
+}
+/*Секция подписки*/
 /*Главная страница*/
 
-
 /*Главная каталога*/
-.subscribe{
-    width: 1200px;
-    height: 411px;
-    background: url("../images/background-subscribe.jpg") no-repeat;
-}
-
 .header-catalog{
-    width: 1200px;
-    height: 408px;
-    background: url("../images/background-catalog-filter.jpg") no-repeat;
+  width: 1200px;
+  height: 408px;
+  background: url("../images/background-catalog-filter.jpg") no-repeat;
 
 }
 
 .catalog-filter{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 
 }
+
+.header-catalog-title{
+  font-weight: bold;
+  font-size: 60px;
+  line-height: 78px;
+  color: #FFFFFF;
+}
+
+.breadcrumbs-list,
+.catalog-filter-list{
+  list-style: none;
+}
+
+.breadcrumbs-link{
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.catalog-filter-title{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+}
+
+.control{
+  font-size: 18px;
+  line-height: 23px;
+  color: #FFFFFF;
+}
+
+.button-filter button{
+  color: #FFFFFF;
+}
+
+.button-filter-on{
+  background: #83B3D3;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.button-filter-off{
+  background: none;
+  border: none;
+  font-size: 18px;
+  line-height: 23px;
+}
+
+/*Сортировка*/
+.view-list{
+  list-style: none;
+}
+
+.hotel-sorting-number{
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: #000000;
+}
+/*Сортировка*/
+
+/*Отели*/
+.hotel-list{
+  list-style: none;
+}
+
+.hotel-title{
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+  color: #000000;
+}
+
+.hotel-type{
+  font-size: 18px;
+  line-height: 23px;
+  color: #333333;
+}
+
+.rating{
+  font-size: 16px;
+  line-height: 21px;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+.button-hotel{
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  border-radius: 4px;
+  border: none;
+  padding: 5px;
+}
+
+.button-brown{
+  background: #756257;
+}
+
+.button-blue{
+  background: #83B3D3;
+}
+
+.more-result{
+  text-align: center;
+  padding: 50px;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.button-result{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  text-transform: uppercase;
+  text-align: center;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  width: 620px;
+  height: 60px;
+}
+/*Отели*/
+
+/*Пагинация*/
+.pagination{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-items: center;
+  padding: 0 72px;
+}
+
+.pagination-list{
+  list-style: none;
+  text-align: center;
+  display: flex;
+  padding: 0;
+}
+
+.pagination-items{
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000;
+  height: 55px;
+  width: 55px;
+  background: #83B3D3;
+  border-radius: 4px;
+  margin-left: 10px;
+  color: #FFFFFF;
+  padding-top: 13px;
+  cursor: pointer;
+}
+
+.active{
+  color: #000000;
+  background: #F2F2F2;
+}
+
+.hotel-on-page-title{
+  font-size: 18px;
+  line-height: 23px;
+  color: #333333;
+  margin-right: 35px;
+}
+/*Пагинация*/
 /*Главная каталога*/
+
+/*Подвал*/
+.footer-contacts{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.social-list{
+  list-style: none;
+  display: flex;
+}
+
+.footer-phone-number{
+  font-size: 40px;
+  line-height: 40px;
+  text-decoration: none;
+  color: #000000;
+}
+/*Подвал*/
