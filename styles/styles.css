@@ -31,19 +31,27 @@
     margin: -1px;
 }
 
+html{
+  height: 100%;
+}
+
 body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   font-family: "PT Sans", "Arial", sans-serif;
-  font-size: 18x;
+  font-size: 18px;
+  width: 1200px;
+  margin: 0 auto;
   line-height: 21px;
   color: #000000;
   background-color: #FFFFFF;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
 
-.container{
-  width: 1200px;
-  margin: 0 auto;
-  background: #FFFFFF;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+.page-wrapper{
+  width: 100%;
+  padding: 0 70px;
 }
 /*Общие стили*/
 
@@ -52,11 +60,21 @@ body{
   width: 1200px;
   min-height: 485px;
   background: url("../images/background-divider.svg")no-repeat bottom,
-              url("../images/welcome.svg") no-repeat 50% 50%,
+              url("../images/welcome.svg") no-repeat 50% 40%,
               url("../images/background-index.jpg") no-repeat;
-
+  margin-bottom: 63px;
 }
 /*Шапка сайта*/
+.navigation-header{
+  display: flex;
+}
+
+.main-logo-link{
+  width: 139px;
+  z-index: 1;
+  margin-right: 30px;
+}
+
 .navigation-link{
   font-size: 20px;
   line-height: 26px;
@@ -64,25 +82,41 @@ body{
   text-decoration: none;
   color: #000000;
   text-align: center;
+  margin-right: 34px;
 }
 
 .navigation-button{
+  margin: 0;
+  padding: 7px;
+  display: block;
+  width: 160px;
+  height: 37px;
   font-size: 16px;
   line-height: 20px;
   font-weight: bold;
   color: #FFFFFF;
   background: #756257;
   text-transform: uppercase;
-  padding: 5px;
-  text-align: center;
+  border-radius: 4px;
 }
 
 .navigation-list{
   list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 345px;
 }
+
+.navigation-control{
+  min-width: 264px;
+  margin-left: auto;
+}
+
 /*Шапка сайта*/
+/*Секция Добро пожаловать*/
 .welcome{
   text-align: center;
+  margin-bottom: 139px;
 }
 
 .welcome-title{
@@ -99,17 +133,54 @@ body{
   color: #333333;
 }
 
+.main-container{
+  flex-grow: 1;
+}
+/*Секция Добро пожаловать*/
 /*Преимущества*/
 .features-list,
 .features-sub-list{
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
+/*позиционирование блока преимуществ*/
+.features-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.features-item{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.features-sub-list{
+  display: flex;
+  justify-content: space-between;
+}
+/*позиционирование блока преимуществ*/
 .features-item-title{
   font-weight: bold;
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
+}
+
+.features-item-card,
+.features-sub-item{
+  text-align: center;
+  width: 400px;
+  min-height: 384px;
+  padding-top: 70px;
+}
+
+.features-item-number{
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .features-item-promo{
@@ -118,6 +189,11 @@ body{
   line-height: 21px;
   color: #FFFFFF;
   text-align: center;
+}
+
+.features-item-description{
+  font-size: 18px;
+  line-height: 21px;
 }
 
 .feauters-item-short{
@@ -153,11 +229,11 @@ body{
   color: #333333;
 }
 /*Преимущества*/
-
 /*Секция поиска*/
 .search{
   background: #FFFFFF;
   text-align: center;
+  padding: 94px 200px;
 }
 
 .search-title{
@@ -175,6 +251,8 @@ body{
 }
 
 .button-search{
+  width: 575px;
+  height: 60px;
   font-size: 16px;
   line-height: 36px;
   font-weight: bold;
@@ -183,18 +261,19 @@ body{
   text-transform: uppercase;
   padding: 5px;
   border: none;
+  border-radius: 10px;
 }
 /*Секция поиска*/
-
-
 /*Секция подписки*/
 .subscribe{
   text-align: center;
   width: 1200px;
   height: 411px;
   background: url("../images/background-subscribe.jpg") no-repeat;
-  margin: 50px 0;
-}
+  display: flex;
+  flex-direction: column;
+  padding: 96px 200px;
+  }
 
 .subscribe-title{
   color: #ffffff;
@@ -202,15 +281,19 @@ body{
   font-size: 30px;
   line-height: 36px;
   text-transform: uppercase;
+  margin: 0;
 }
 
 .subscribe-text{
   color: #ffffff;
   font-size: 22px;
   line-height: 26px;
+  margin: 36px 0;
 }
 
 .button-subscribe{
+  width: 200px;
+  height: 60px;
   color: #fff;
   font-weight: bold;
   font-size: 20px;
@@ -218,28 +301,16 @@ body{
   text-transform: uppercase;
   background: #83B3D3;
   border: none;
+  border-radius: 0px 10px 10px 0px;
 }
 
-.subscribe-catalog{
-  text-align: center;
-  margin: 50px 0;
-}
-
-.subscribe-title-catalog{
-  color: #000000;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 36px;
-  text-transform: uppercase;
-}
-
-.subscribe-text-catalog{
-  color: #000000;
-  font-size: 22px;
-  line-height: 26px;
+ .subscribe-form{
+  display: flex;
 }
 
 .subscribe-input{
+  width: 600px;
+  height: 60px;
   font-size: 18px;
   line-height: 26px;
   color: #000000;
@@ -247,6 +318,15 @@ body{
   background: #F2F2F2;
   border-radius: 10px 0px 0px 10px;
   padding: 10px;
+}
+
+.subscribe-catalog{
+  background: #FFFFFF;
+}
+
+.subscribe-catalog h2,
+.subscribe-catalog p{
+  color: #333333;
 }
 /*Секция подписки*/
 /*Главная страница*/
@@ -256,7 +336,7 @@ body{
   width: 1200px;
   height: 408px;
   background: url("../images/background-catalog-filter.jpg") no-repeat;
-
+  padding-top: 35px;
 }
 
 .catalog-filter{
@@ -270,11 +350,16 @@ body{
   font-size: 60px;
   line-height: 78px;
   color: #FFFFFF;
+  margin: 0;
 }
 
 .breadcrumbs-list,
 .catalog-filter-list{
   list-style: none;
+}
+
+.breadcrumbs-list{
+  display: flex;
 }
 
 .breadcrumbs-link{
@@ -318,6 +403,7 @@ body{
 /*Сортировка*/
 .view-list{
   list-style: none;
+  display: flex;
 }
 
 .hotel-sorting-number{
@@ -327,11 +413,32 @@ body{
   text-transform: uppercase;
   color: #000000;
 }
+
+.hotel-sorting{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hotel-sorting-group{
+  display: flex;
+  justify-content: space-between;
+  border: none;
+}
 /*Сортировка*/
 
 /*Отели*/
 .hotel-list{
   list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.hotel-item{
+  padding: 20px;
 }
 
 .hotel-title{
@@ -352,6 +459,7 @@ body{
   line-height: 21px;
   text-transform: uppercase;
   color: #333333;
+  background: #F2F2F2;
 }
 
 .button-hotel{
@@ -399,9 +507,8 @@ body{
 .pagination{
   display: flex;
   justify-content: space-between;
-  text-align: center;
   align-items: center;
-  padding: 0 72px;
+  margin-top: 30px;
 }
 
 .pagination-list{
@@ -409,6 +516,7 @@ body{
   text-align: center;
   display: flex;
   padding: 0;
+  margin: 0;
 }
 
 .pagination-items{
@@ -420,7 +528,7 @@ body{
   width: 55px;
   background: #83B3D3;
   border-radius: 4px;
-  margin-left: 10px;
+  margin-right: 5px;
   color: #FFFFFF;
   padding-top: 13px;
   cursor: pointer;
@@ -441,15 +549,25 @@ body{
 /*Главная каталога*/
 
 /*Подвал*/
+.main-footer{
+  padding: 40px 72px;
+}
+
 .footer-contacts{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
 .social-list{
   list-style: none;
   display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.social-item:not(:last-child){
+  margin-right: 30px;
 }
 
 .footer-phone-number{
