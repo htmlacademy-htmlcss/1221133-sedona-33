@@ -39,6 +39,7 @@
 
 html {
   height: 100%;
+  background-color: #E5E5E5
 }
 
 body {
@@ -70,13 +71,17 @@ body {
 /*Шапка сайта*/
 .navigation-header{
   display: flex;
-  height: 66px;
 }
 
-.main-logo-img{
-  position: relative;
+.main-logo{
+  position: absolute;
   z-index: 1;
-  margin-right: 34px;
+}
+
+.main-logo:focus:not(:active){
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
 }
 
 .navigation-list{
@@ -86,11 +91,12 @@ body {
 
 .navigation-main{
   min-width: 345px;
+  margin-left: 173px;
 }
 
 .navigation-main-item{
   position: relative;
-  padding: 14px 0 15px;
+  padding: 13px 0 15px;
   margin-right: 11px;
 }
 
@@ -104,6 +110,12 @@ body {
 
 .navigation-main-link:active{
   color: rgba(117, 98, 87, 0.3);
+}
+
+.navigation-main-link:focus:not(:active){
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
 }
 
 .active-header::before{
@@ -133,11 +145,24 @@ body {
 }
 
 .navigation-user-link{
-  margin-right: 32px;
+  width: 38px;
+  height: 38px;
+  position: relative;
+  padding: 0;
 }
 
 .navigation-user-item{
-  margin-left: auto;
+  margin-right: 4px;
+  margin-left: 1px;
+  position: relative;
+  padding: 12px 0 15px;
+}
+
+.header-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .navigation-button{
@@ -152,24 +177,32 @@ body {
   color: #fff;
   border: 0;
   margin: 0;
+  margin-left: 18px;
 }
 
-.lupa{
+.icon-search{
   margin-right: -19px;
   margin-top: 3px;
 }
 
-.brown-button:hover{
-  background: #615048;
-}
-
-.brown-button:focus:not(:active){
-  background-color: #615048;
-  box-shadow: 0 0 0 3px #83b3d3;
+.navigation-user-link:focus:not(:active){
+  color: #756257;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 3px #83B3D3;
   outline: none;
 }
 
-.brown-button:active{
+.button-brown:hover{
+  background: #615048;
+}
+
+.button-brown:focus:not(:active){
+  background-color: #615048;
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
+}
+
+.button-brown:active{
   background: #615048;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -182,16 +215,17 @@ body {
   fill-opacity: 0.3;
 }
 
-.number{
-  position: relative;
-  top: 2px;
+.header-icon:focus:not(:active){
+  border-radius: 10px;
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
 }
 
 .number::after{
   content:url(../images/header-heart-number.svg);
   position: absolute;
-  top: -6px;
-  right: -13px;
+  top: 2px;
+  right: -4px;
 }
 
 .number:active::after{
@@ -230,13 +264,6 @@ body {
 }
 /*Секция Добро пожаловать*/
 /*Преимущества*/
-.features-list,
-.features-sub-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
 /*позиционирование блока преимуществ*/
 .features-list {
   display: flex;
@@ -253,6 +280,7 @@ body {
 .features-sub-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 /*позиционирование блока преимуществ*/
 .features-item-title {
@@ -286,7 +314,7 @@ body {
 }
 
 .features-item-promo {
-  background: #83b3d3;
+  background: #83B3D3;
   font-size: 18px;
   line-height: 21px;
   color: #ffffff;
@@ -324,8 +352,27 @@ body {
   background: rgba(131, 179, 211, 0.2);
 }
 
+.features-house{
+  background-image: url(../images/features-house.svg);
+}
+
+.features-eat{
+  background-image: url(../images/features-eat.svg);
+}
+
+.features-souvenirs{
+  background-image: url(../images/features-souvenirs.svg);
+}
+
+.icon-svg{
+  padding-top: 160px;
+  padding-bottom: 72px;
+  background-repeat: no-repeat;
+  background-position: center bottom 223px;
+}
+
 .features-sub-item:nth-child(odd) {
-  background: rgba(131, 179, 211, 0.12);
+  background-color: rgba(131, 179, 211, 0.12);
 }
 
 .features-subtitle {
@@ -386,6 +433,7 @@ body {
   padding: 5px;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
 }
 /*Секция поиска*/
 /*Секция подписки*/
@@ -399,6 +447,11 @@ body {
   padding: 96px 200px;
 }
 
+.subscribe-catalog{
+  padding: 70px 200px 140px 200px;
+  margin-bottom: 43px;
+}
+
 .subscribe-title {
   color: #ffffff;
   font-weight: bold;
@@ -406,6 +459,7 @@ body {
   line-height: 36px;
   text-transform: uppercase;
   margin: 0;
+  margin-top: -2px;
 }
 
 .subscribe-text {
@@ -414,26 +468,38 @@ body {
   font-size: 22px;
   line-height: 26px;
   width: 470px;
-  margin: 29px auto;
+  margin: 27px auto;
+}
+
+.subscribe-title-catalog{
+  margin-top: 2px;
+}
+
+.subscribe-text-catalog{
+  margin: 47px auto;
 }
 
 .button-subscribe {
-  width: 200px;
-  height: 60px;
+  padding: 17px 34px;
   color: #FFFFFF;
   font-family: inherit;
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
   text-transform: uppercase;
-  background: #83b3d3;
+  background: #83B3D3;
   border: none;
   border-radius: 0px 10px 10px 0px;
+  cursor: pointer;
 }
 
 .subscribe-form {
   display: flex;
-  margin-top: 16px;
+  margin-top: 20px;
+}
+
+.subscribe-form-catalog{
+  margin-top: -1px;
 }
 
 .subscribe-input {
@@ -443,7 +509,7 @@ body {
   line-height: 26px;
   color: #000000;
   border: none;
-  background: #f2f2f2;
+  background: #F2F2F2;
   border-radius: 10px 0px 0px 10px;
   padding: 0 22px;
   cursor: pointer;
@@ -455,8 +521,14 @@ body {
 }
 
 .subscribe-input:focus:not(:active){
-  background-color: #e5e5e5;
-  box-shadow: inset 0 0 0 3px #83b3d3;
+  background-color: #E5E5E5;
+  box-shadow: inset 0 0 0 3px #83B3D3;
+  outline: none;
+}
+
+input[type=email]:invalid{
+  background-color: #FFFFFF;
+  box-shadow: inset 0 0 0 3px #FF5757;
   outline: none;
 }
 
@@ -494,10 +566,11 @@ body {
   line-height: 78px;
   color: #ffffff;
   margin: 0;
+  margin-bottom: -10px;
 }
 
 .catalog-hotel {
-  margin-top: 45px;
+  margin-top: 42px;
 }
 
 /*Хлебные крошки*/
@@ -554,6 +627,7 @@ body {
   color: #ffffff;
   margin: 0;
   margin-bottom: 30px;
+  padding: 0;
 }
 
 .catalog-filter-group {
@@ -594,7 +668,7 @@ body {
   height: 48px;
   align-items: center;
   justify-content: center;
-  background: #83b3d3;
+  background: #83B3D3;
   border: none;
   font-weight: bold;
   font-size: 16px;
@@ -602,7 +676,7 @@ body {
   font-family: inherit;
   text-transform: uppercase;
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   cursor: pointer;
 }
 
@@ -615,10 +689,20 @@ body {
   font-family: inherit;
 }
 
+.button-filter-on:hover{
+  background: #68A2CA;
+}
+
+.button-filter-on:active{
+  background: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
+}
+
 .button-filter-on:focus:not(:active){
   border: 3px solid #FFFFFF;
   border-radius: 4px;
   outline: none;
+  background: #68A2CA;
 }
 
 .button-filter-off:hover{
@@ -635,7 +719,7 @@ body {
   border-radius: 4px;
 }
 
-/*Кстомный чекбокс*/
+/*Кастомный чекбокс*/
 .control{
   position: relative;
   display: block;
@@ -644,7 +728,7 @@ body {
 
 .control-mark-checkbox {
   position: absolute;
-  top: 4px;
+  top: 1px;
   left: 0;
   width: 20px;
   height: 20px;
@@ -657,33 +741,13 @@ body {
   background-repeat: no-repeat;
   background-position: 60% 49%;
 }
+/*Кастомный чекбокс*/
 
-.control-input[type="checkbox"]:focus:not(:active) + .control-mark-checkbox {
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 0 0 0 3px #83b3d3;
-  outline: none;
-}
-
-.control:active .control-mark-checkbox {
-  background-color: rgba(255, 255, 255, 0.3);
-  outline: none;
-}
-
-.control-input[type="radio"]:focus + .control-mark-radio {
-  box-shadow: inset 0 0 0 3px #83b3d3;
-}
-
-.control-input[type="radio"]:focus:checked + .control-mark-radio {
-  box-shadow: 0 0 0 3px #83b3d3;
-}
-
-/*Кстомный чекбокс*/
-
-/*Кстомный радио*/
+/*Кастомный радио*/
 .control-mark-radio {
   position: absolute;
-  top: 4px;
-  left: 1px;
+  top: 1px;
+  left: 2px;
   box-sizing: border-box;
   width: 20px;
   height: 20px;
@@ -701,13 +765,39 @@ body {
   border-radius: 50%;
   content: "";
 }
-/*Кстомный радио*/
+/*Кастомный радио*/
+
+/*Состояние чекбоксов*/
+.control-input[type="checkbox"]:focus:not(:active) + .control-mark-checkbox {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
+}
+
+.control:hover .control-mark-checkbox,
+.control:hover .control-mark-radio{
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.control:active .control-mark-checkbox,
+.control:active .control-mark-radio{
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.control-input[type="radio"]:focus + .control-mark-radio {
+  box-shadow: inset 0 0 0 3px #83B3D3;
+}
+
+.control-input[type="radio"]:focus:checked + .control-mark-radio {
+  box-shadow: 0 0 0 3px #83B3D3;
+}
+/*Состояние чекбоксов*/
 
 /*Ползунок*/
 .range-inputs {
   display: flex;
   justify-content: center;
-  margin: 8px 0 28px;
+  margin: 6px 0 28px;
 }
 
 .catalog-filter-label {
@@ -858,7 +948,7 @@ body {
   display: block;
   width: 48px;
   height: 48px;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #E6E6E6;
   border-radius: 4px;
 }
 
@@ -886,7 +976,7 @@ body {
 .sorting-price{
   width: 287px;
   height: 48px;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #E6E6E6;
   border-radius: 4px;
   margin-right: 76px;
   font-size: 18px;
@@ -894,11 +984,23 @@ body {
   color:333333;
   font-family: inherit;
 }
+
+.sort-inner{
+  padding: 0 19px;
+  appearance: none;
+  background: url(../images/dropdown.svg) no-repeat;
+  background-position: right 19px center;
+}
 /*Сортировка*/
 
 /*Отели*/
 .hotel{
   margin-top: 64px;
+}
+
+.page-wrapper-hotel{
+  width: 100%;
+  padding: 0 71px;
 }
 
 .hotel-list{
@@ -966,7 +1068,8 @@ body {
   height: 17px;
   background: url(../images/star.svg) space;
   position: relative;
-  top: 8px;
+  top: 9px;
+  right: -2px;
 }
 
 .button-info{
@@ -977,9 +1080,10 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   width: 133px;
-  height: 37px;
+  min-height: 37px;
   border-radius: 4px;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .button-favorite{
@@ -990,9 +1094,10 @@ body {
   text-transform: uppercase;
   font-weight: bold;
   width: 140px;
-  height: 37px;
+  min-height: 37px;
   border-radius: 4px;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .rating{
@@ -1011,12 +1116,12 @@ body {
   left: -10px;
 }
 
-.brown-button {
+.button-brown {
   background: #756257;
 }
 
 .button-blue {
-  background: #83b3d3;
+  background: #83B3D3;
 }
 
 .button-green{
@@ -1025,9 +1130,9 @@ body {
 
 .more-result {
   text-align: center;
-  padding: 50px;
-  border-top: 1px solid #e6e6e6;
-  border-bottom: 1px solid #e6e6e6;
+  padding: 30px;
+  border-top: 1px solid #E6E6E6;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 .button-result {
@@ -1036,12 +1141,13 @@ body {
   line-height: 26px;
   text-transform: uppercase;
   text-align: center;
-  color: #ffffff;
+  color: #FFFFFF;
   border: none;
   border-radius: 4px;
   width: 620px;
   height: 60px;
   font-family: inherit;
+  cursor: pointer;
 }
 
 .hotel-link{
@@ -1058,7 +1164,7 @@ body {
 }
 
 .hotel-link:focus:not(:active){
-  box-shadow: 0 0 0 3px #83b3d3;
+  box-shadow: 0 0 0 3px #83B3D3;
   border-radius: 0;
   outline: none;
 }
@@ -1069,7 +1175,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 28px;
 }
 
 .pagination-list {
@@ -1087,7 +1193,7 @@ body {
   justify-content: center;
   width: 55px;
   height: 55px;
-  background: #83b3d3;
+  background: #83B3D3;
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
@@ -1129,14 +1235,14 @@ body {
 
 .active {
   color: #000000;
-  background: #f2f2f2;
+  background: #F2F2F2;
 }
 
 .hotel-on-page-title {
   font-size: 18px;
   line-height: 23px;
   color: #333333;
-  margin-right: 47px;
+  margin-right: 46px;
 }
 
 .sorting-number{
@@ -1145,16 +1251,9 @@ body {
   height: 48px;
   font-size: 18px;
   line-height: 23px;
-  border: 2px solid #e6e6e6;
+  border: 2px solid #E6E6E6;
   border-radius: 4px;
-  margin-right: 5px;
-}
-
-.sort-inner{
-  padding: 0 17px;
-  appearance: none;
-  background: url(../images/dropdown.svg) no-repeat;
-  background-position: right 19px center;
+  margin-right: 4px;
 }
 
 .sort-inner:hover{
@@ -1176,20 +1275,28 @@ body {
 
 /*Подвал*/
 .main-footer {
-  padding: 25px 72px;
+  display: flex;
+  align-items: center;
+  padding: 24px 50px 26px 60px;
 }
 
-.footer-contacts {
+.footer-contacts{
+  width: 128px;
+}
+
+.social-list{
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
-.social-list {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+.footer-number{
+  width: 381px;
+  margin-left: 221px;
+  text-align: center;
+}
+
+.footer-logo{
+  margin-left: auto;
 }
 
 .social-link{
@@ -1212,23 +1319,23 @@ body {
   text-decoration: none;
   color: #000000;
   padding: 15px;
-  position: relative;
-  top: -1px;
-  left: 19px;
 }
 
 .footer-logo{
+  margin-left: auto;
+  position: relative;
+}
+
+.footer-logo-link{
   width: 160px;
   height: 70px;
-  position: relative;
-  left: 23px;
-  top: -2px;
+  display: block;
 }
 
 .footer-icon-logo{
   position: absolute;
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -1237,7 +1344,7 @@ body {
 }
 
 .footer-phone-number:focus:not(:active){
-  box-shadow: inset 0 0 0 3px #83b3d3;
+  box-shadow: inset 0 0 0 3px #83B3D3;
   outline: none;
   border-radius: 10px;
 }
@@ -1251,17 +1358,17 @@ body {
   fill: #615048;
 }
 
-.footer-logo:focus:not(:active){
+.footer-logo-link:focus:not(:active){
   border-radius: 10px;
-  box-shadow: 0 0 0 3px #83b3d3;
+  box-shadow: 0 0 0 3px #83B3D3;
   outline: none;
 }
 
-.footer-icon-logo:active{
+.footer-logo-link:active{
   fill-opacity: 0.3;
 }
 
-.social-icon:hover{
+.footer-logo-link:hover{
   fill: #68A2CA;
 }
 
@@ -1271,7 +1378,11 @@ body {
   outline: none;
 }
 
-.social-icon:active{
+.social-icon:hover{
+  fill: #68A2CA;
+}
+
+.social-link:active{
   fill: #68A2CA;
   fill-opacity: 0.3;
 }
@@ -1301,6 +1412,11 @@ body {
   width: 715px;
 }
 
+.header-modal{
+  display: flex;
+  justify-content: space-between;
+}
+
 .modal-title{
   font-weight: bold;
   font-size: 30px;
@@ -1308,7 +1424,7 @@ body {
   text-transform: uppercase;
   color: #000000;
   margin: 0;
-  margin-bottom: 32px;
+  margin-bottom: 52px;
 }
 
 .modal-label{
@@ -1324,9 +1440,11 @@ body {
   border-radius: 4px;
   border: none;
   font-weight: bold;
+  font-family: inherit;
   font-size: 18px;
   line-height: 40px;
-  color: #000;
+  color: #000000;
+  position: relative;
 }
 
 .auth-form{
@@ -1349,16 +1467,44 @@ body {
 .modal-close-button {
   position: absolute;
   padding: 0;
-  top: 53px;
-  right: 68px;
+  top: 54px;
+  right: 70px;
   width: 53px;
   height: 53px;
-  background-color: #ffffff;
+  background: #F2F2F2;
   border: none;
-  background-image: url("../images/modal-close.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   cursor: pointer;
+  border-radius: 50%;
+}
+
+.icon-close{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-close-button:hover{
+  background: #E6E6E6;
+}
+
+.modal-close-button:active{
+  background: #E6E6E6;
+  opacity: 0.3;
+}
+
+.modal-close-button:focus:not(:active),
+.auth-form-field:focus:not(:active) {
+  background-color: #E5E5E5
+  box-shadow: 0 0 0 3px #83B3D3;
+  outline: none;
+}
+
+.auth-form-field::after{
+  content: url(../images/calendar.svg);
+  position: absolute;
+  top: 5px;
+  right: 18px;
 }
 
 .input-error{
@@ -1425,6 +1571,20 @@ body {
   right: 13px;
 }
 
+.button-field:hover{
+  opacity: 1;
+}
+
+.button-field:active{
+  opacity: 0.2;
+}
+
+.button-field:focus:not(:active) {
+  opacity: 1;
+  box-shadow: inset 0 0 0 3px #83B3D3;
+  outline: none;
+}
+
 .modal-input-number:hover{
   background: #E6E6E6;
 }
@@ -1440,14 +1600,13 @@ body {
 }
 
 .tooltip-button{
-
   border: none;
   width: 25px;
   height: 25px;
   align-self: center;
   margin-left: 10px;
   border-radius: 50%;
-  background-color: #83b3d3;
+  background-color: #83B3D3;
   background-image: url(../images/tooltip.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -1464,6 +1623,15 @@ body {
   color: #FFFFFF;
   background: #83B3D3;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator{
+  opacity: 0;
+}
+
+input[type=date]::-webkit-calendar-indicator{
+  filter:invert(1);
 }
 
 .tooltip-text{
@@ -1472,9 +1640,9 @@ body {
   z-index: 1;
   width: 256px;
   min-height: 30px;
-  padding: 19px 22px 24px;
+  padding: 18px 22px 24px;
   box-sizing: border-box;
-  top: 54px;
+  top: 53px;
   left: -61px;
   font-weight: 400;
   font-size: 16px;
@@ -1498,6 +1666,9 @@ body {
   display: block;
 }
 
+.auth-form-field:hover{
+  background: #E6E6E6;
+}
 /*Модальное окно*/
 
 
