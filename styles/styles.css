@@ -484,8 +484,7 @@ body {
   padding: 35px 72px 86px 72px
 }
 
-.catalog-filter,
-.breadcrumbs-list {
+.catalog-filter{
   display: flex;
 }
 
@@ -501,15 +500,52 @@ body {
   margin-top: 45px;
 }
 
-.breadcrumbs-link {
-  color: #ffffff;
-  text-decoration: none;
+/*Хлебные крошки*/
+.breadcrumbs-list{
+  display: flex;
+  background: url(../images/breadcrumbs-arrow.svg) no-repeat center left 24px;
 }
 
-.breadcrumbs-link-icon::after{
-  content: url(../images/breadcrumbs-arrow.svg);
-  margin: 0 10px;
+.breadcrumbs-link-icon{
+  display: block;
+  width: 28px;
+  height: 27px;
+  position: relative;
+  margin-left: -7px;
+  margin-right: 10px;
 }
+
+.breadcrumbs-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  padding: 3px 8px;
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.home-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+ }
+
+.breadcrumbs-link:hover{
+  opacity: 0.6;
+}
+
+.breadcrumbs-link:active{
+  opacity: 0.3;
+}
+
+.breadcrumbs-link:focus:not(:active){
+  box-shadow: inset 0 0 0 3px #83B3D3;
+  outline: none;
+  border-radius: 4px;
+}
+/*Хлебные крошки*/
 
 .catalog-filter-title {
   font-weight: bold;
@@ -563,9 +599,11 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 21px;
+  font-family: inherit;
   text-transform: uppercase;
   border-radius: 4px;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .button-filter-off {
@@ -573,6 +611,28 @@ body {
   border: none;
   font-size: 18px;
   line-height: 23px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.button-filter-on:focus:not(:active){
+  border: 3px solid #FFFFFF;
+  border-radius: 4px;
+  outline: none;
+}
+
+.button-filter-off:hover{
+  opacity: 0.6;
+}
+
+.button-filter-off:active{
+  opacity: 0.3;
+}
+
+.button-filter-off:focus:not(:active){
+  box-shadow: inset 0 0 0 3px #83B3D3;
+  outline: none;
+  border-radius: 4px;
 }
 
 /*Кстомный чекбокс*/
@@ -598,8 +658,23 @@ body {
   background-position: 60% 49%;
 }
 
-.control-mark-checkbox:hover{
-  opacity: 0.3;
+.control-input[type="checkbox"]:focus:not(:active) + .control-mark-checkbox {
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 0 3px #83b3d3;
+  outline: none;
+}
+
+.control:active .control-mark-checkbox {
+  background-color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.control-input[type="radio"]:focus + .control-mark-radio {
+  box-shadow: inset 0 0 0 3px #83b3d3;
+}
+
+.control-input[type="radio"]:focus:checked + .control-mark-radio {
+  box-shadow: 0 0 0 3px #83b3d3;
 }
 
 /*Кстомный чекбокс*/
@@ -625,10 +700,6 @@ body {
   background-color: #3f5e72;
   border-radius: 50%;
   content: "";
-}
-
-.control-mark-radio:hover{
-  opacity: 0.3;
 }
 /*Кстомный радио*/
 
@@ -672,14 +743,15 @@ body {
   opacity: 0.6;
 }
 
+.catalog-filter-input:focus:not(:active){
+  box-shadow: inset 0 0 0 3px #81b3d2, 0 0 0 3px #81b3d2;
+  outline: none;
+}
+
 .catalog-filter-input:active{
   background: #756257;
   border: 2px solid #FFFFFF;
-  box-sizing: border-box;
-  border-radius: 4px 0px 0px 4px;
-
 }
-
 
 .prise-input-text {
   position: absolute;
@@ -1204,3 +1276,228 @@ body {
   fill-opacity: 0.3;
 }
 /*Подвал*/
+/*Модальное окно*/
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  z-index: 1;
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 70px;
+  background-color: #FFFFFF;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+}
+
+.modal-auth{
+  width: 715px;
+}
+
+.modal-title{
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 40px;
+  text-transform: uppercase;
+  color: #000000;
+  margin: 0;
+  margin-bottom: 32px;
+}
+
+.modal-label{
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 40px;
+  color: #000000;
+  margin: auto 0;
+}
+
+.auth-form-field {
+  background: #F2F2F2;
+  border-radius: 4px;
+  border: none;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 40px;
+  color: #000;
+}
+
+.auth-form{
+  display: grid;
+  grid-template-columns: 155px 133px 56px 97px 133px;
+  grid-template-rows: 50px 50px 50px 60px;
+  row-gap: 40px;
+}
+
+.input-wrapper{
+  grid-column: 2/-1;
+}
+
+.field{
+  width: 100%;
+  height: 100%;
+  padding: 0 13px 2px 18px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 53px;
+  right: 68px;
+  width: 53px;
+  height: 53px;
+  background-color: #ffffff;
+  border: none;
+  background-image: url("../images/modal-close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.input-error{
+  color: #FF5757;
+}
+
+.input-message{
+  position: relative;
+  top: -7px;
+  font-size: 16px;
+  line-height: 40px;
+}
+
+.input-correct{
+  font-size: 16px;
+  line-height: 40px;
+  color: #333333;
+}
+
+.modal-input-number{
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 40px;
+  color: #000000;
+  font-weight: bold;
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 4px;
+  margin: 0;
+}
+
+.button-field{
+  position: absolute;
+  background-color: transparent;
+  border: none;
+  top: 12px;
+  bottom: 0;
+  width: 25px;
+  height: 25px;
+  opacity: 0.3;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+.button-wrapper{
+  position: relative;
+}
+
+.modal-icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button-minus{
+  left: 13px;
+}
+
+.button-plus{
+  right: 13px;
+}
+
+.modal-input-number:hover{
+  background: #E6E6E6;
+}
+
+.modal-input-number:active{
+  opacity: 0.3;
+}
+
+.modal-child{
+  grid-column: 4/5;
+  display: flex;
+  position: relative;
+}
+
+.tooltip-button{
+
+  border: none;
+  width: 25px;
+  height: 25px;
+  align-self: center;
+  margin-left: 10px;
+  border-radius: 50%;
+  background-color: #83b3d3;
+  background-image: url(../images/tooltip.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.modal-button{
+  grid-column:1/-1;
+  border: none;
+  font-family: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 40px;
+  color: #FFFFFF;
+  background: #83B3D3;
+  border-radius: 10px;
+}
+
+.tooltip-text{
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 256px;
+  min-height: 30px;
+  padding: 19px 22px 24px;
+  box-sizing: border-box;
+  top: 54px;
+  left: -61px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  align-items: center;
+  color: #fff;
+  background: #333;
+  box-shadow: 0px 15px 30px rgb(0 0 0 / 30%);
+  border-radius: 10px;
+}
+
+.tooltip-text::before{
+  content: url(../images/tooltip-before.svg);
+  position: absolute;
+  top: -16px;
+  left: 117px;
+}
+
+.tooltip-button:hover + .tooltip-text,
+.tooltip-button:focus + .tooltip-text {
+  display: block;
+}
+
+/*Модальное окно*/
+
+
