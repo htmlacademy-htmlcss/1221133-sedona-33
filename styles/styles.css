@@ -391,6 +391,11 @@ body {
   line-height: 21px;
   color: #333333;
 }
+
+.home-text{
+  width: 176px;
+  margin: 0 auto;
+}
 /*Преимущества*/
 /*Секция поиска*/
 .search {
