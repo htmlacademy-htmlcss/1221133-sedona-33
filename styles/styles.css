@@ -551,8 +551,8 @@ input[type=email]:invalid{
 /*Секция гостиницы Седоны*/
 .header-catalog {
   width: 1200px;
-  height: 408px;
   background: url("../images/background-catalog-filter.jpg") no-repeat;
+  background-size: cover;
   padding: 35px 72px 86px 72px
 }
 
@@ -774,13 +774,11 @@ input[type=email]:invalid{
   outline: none;
 }
 
-.control:hover .control-mark-checkbox,
-.control:hover .control-mark-radio{
+.control:hover .control-mark-checkbox{
   background: rgba(255, 255, 255, 0.6);
 }
 
-.control:active .control-mark-checkbox,
-.control:active .control-mark-radio{
+.control:active .control-mark-checkbox{
   background: rgba(255, 255, 255, 0.3);
 }
 
@@ -1484,7 +1482,8 @@ input[type=email]:invalid{
   transform: translate(-50%, -50%);
 }
 
-.modal-close-button:hover{
+.modal-close-button:hover,
+.auth-form-field:hover{
   background: #E6E6E6;
 }
 
@@ -1493,9 +1492,15 @@ input[type=email]:invalid{
   opacity: 0.3;
 }
 
+.auth-form-field:active{
+  background-color: #FFFFFF;
+  box-shadow: inset 0 0 0 2px #000;
+  outline: none;
+}
+
 .modal-close-button:focus:not(:active),
 .auth-form-field:focus:not(:active) {
-  background-color: #E5E5E5
+  background-color: #E5E5E5;
   box-shadow: 0 0 0 3px #83B3D3;
   outline: none;
 }
@@ -1664,10 +1669,6 @@ input[type=date]::-webkit-calendar-indicator{
 .tooltip-button:hover + .tooltip-text,
 .tooltip-button:focus + .tooltip-text {
   display: block;
-}
-
-.auth-form-field:hover{
-  background: #E6E6E6;
 }
 /*Модальное окно*/
 
