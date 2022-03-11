@@ -240,6 +240,7 @@ body {
   background: url("../images/background-divider.svg")no-repeat bottom,
               url("../images/welcome.svg") no-repeat 50% 38%,
               url("../images/background-index.jpg") no-repeat;
+  background-color: #83B3D3;
 }
 
 .welcome {
@@ -340,7 +341,7 @@ body {
 }
 
 .features-sub-item{
-  padding: 84px 75px 72px 75px;
+  padding: 72px 75px 72px 75px;
 }
 
 .features-item:nth-child(3),
@@ -352,23 +353,29 @@ body {
   background: rgba(131, 179, 211, 0.2);
 }
 
-.features-house{
-  background-image: url(../images/features-house.svg);
-}
-
-.features-eat{
-  background-image: url(../images/features-eat.svg);
-}
-
-.features-souvenirs{
-  background-image: url(../images/features-souvenirs.svg);
-}
-
 .icon-svg{
-  padding-top: 160px;
-  padding-bottom: 72px;
-  background-repeat: no-repeat;
-  background-position: center bottom 223px;
+  min-height: 384px;
+}
+
+.features-house:before{
+  content: url(../images/house.svg);
+  position: relative;
+  top: 6px;
+  left: 1px;
+}
+
+.features-eat:before{
+  content: url(../images/eat.svg);
+  position: relative;
+  top: 7px;
+  left: 1px;
+}
+
+.features-souvenirs:before{
+  content: url(../images/gift.svg);
+  position: relative;
+  top: 7px;
+  left: 1px;
 }
 
 .features-sub-item:nth-child(odd) {
@@ -447,6 +454,7 @@ body {
   width: 1200px;
   height: 411px;
   background: url("../images/background-subscribe.jpg") no-repeat;
+  background-color: #83B3D3;
   display: flex;
   flex-direction: column;
   padding: 96px 200px;
@@ -558,6 +566,7 @@ input[type=email]:invalid{
   width: 1200px;
   background: url("../images/background-catalog-filter.jpg") no-repeat;
   background-size: cover;
+  background-color: #68A2CA;
   padding: 35px 72px 86px 72px
 }
 
